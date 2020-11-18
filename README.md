@@ -1,4 +1,4 @@
-# Web Part I Skeleton
+# JavaScripts-Skeleton
 
 We've provided 2 files:
 - index.html - this is where all of your HTML code will go
