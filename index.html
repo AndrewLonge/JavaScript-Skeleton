@@ -14,13 +14,13 @@
 <body>
     <!-- Build your navigation bar here -->
     <nav class="topnav">
-        <a class="active" href="https://youtu.be/2n9gE20hqU4?t=163"target="_blank">La Flame</a>
-        <a href="pogba.html"target="_blank">La Pioche</a>
-        <a href="https://youtu.be/5i6A1IHAQsg?t=98" target="_blank">Don Toliver</a>
+        <a href="#donny">Don Toliver</a>
+        <a class="active" href="#travis">La Flame</a>
+        <a href="#pogba"target="_blank">La Pioche</a>
     </nav>
     <!-- Build your content here -->
     <div id="content">
-        <p><span id="liked-item">ISS LIT</span> </p>
+        <p id="top"><span id="liked-item"><br><br><br>ISS LIT</span> </p>
         <!-- Example 1: Add a paragraph. Then within it, add a span with an id of "liked-item". Put something you like within the span. -->
         <!-- Challenge 1: Add a button with an id of "cool-button" -->
         <button id="cool-button">cool-button</button>
@@ -38,8 +38,8 @@
         <ul id="fly-list">
             GOATs:
         </ul>
-        <a class="laflame"></a>
-        <a class="toliver">Thinking I can make this many songs about <br>
+          
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><h1 id="donny">Don Toliver</h1><h2><a href="#top"> Back to top</a></h2><br>Thinking I can make this many songs about <br>
             My lady, she be havin' me up, down (Ooh, ooh)<br>
             I be in my feelings, sometimes I be jealous<br>
             But I keep it thuggin' like it's Makaveli<br>
@@ -48,7 +48,18 @@
             You said you wanna tell on me, now, won't you tell it? (Yeah)<br>
             In between the sheets, you know I got you yellin' (Yellin')</a>
             <a  href="https://youtu.be/5i6A1IHAQsg?t=98"target="_blank"><img class="dontoliver" src="https://www.warnermusic.de/sites/warnermusic.de/files/artists/photos/don_toliver_pic.jpg"></a>
-        <a class="pioche"></a>
+          </div>
+            <a class="travis"><br><br><br><br><br><br><br><br><br><h1 id="travis">Travis Scott</h1><h2><a href="#top"> Back to top</a></h2><br>
+            <p>Now that I'm home, back off the road<br>
+            We shut it down, where it ain't so<br>
+            With checks in the streets, Jay number fours<br>
+            Saint Laurent feet, put it on toes<br>
+            Take it with me, double your dose<br>
+            Covered with angels that's watching my soul<br>
+            Jet got a bed, it's bigger windows<br>
+            Said I'll be there in 10, but I got there in four</p></a>
+            <a  href="https://youtu.be/PJWHAiDARMQ?t=114"target="_blank"><img class="laflame" src="https://static.wikia.nocookie.net/keepingupwiththekardashians/images/4/4a/TravisScott.jpeg/revision/latest/scale-to-width-down/340?cb=20180205142135">
+            <a class="pioche"></a>
         <!-- Challenge 6: Add a paragraph with a span. Inside that span (which has an id of "bold-text"), write something that you think should be emphasized :D -->
         <p><span id="bold-text">Don Toliver is underrated.</span></p>
         <!-- Challenge 7: Create a canvas element with an id named "smiley". It should have a width of 150 and a height of 150 -->
@@ -73,23 +84,41 @@
     </script>
     <!-- This Javascript snippet will bind to the click event an animation that imitates smooth scrolling -->
     <script>
-         $(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-      // Prevent default anchor click behavior
+         // Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
         event.preventDefault();
-        // Store hash
-        var hash = this.hash;
         $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
         });
-      } // End if
-    });
+      }
+    }
   });
     </script>
     <!-- Challenge 1: This Javascript snippet will change the color of a button when it is hovered over or clicked on. Do this for "cool-button -->
