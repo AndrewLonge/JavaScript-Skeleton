@@ -15,12 +15,12 @@
     <!-- Build your navigation bar here -->
     <nav class="topnav">
         <a href="#donny">Don Toliver</a>
-        <a class="active" href="#travis">La Flame</a>
-        <a href="#pogba"target="_blank">La Pioche</a>
+        <a href="#laflame">Travis Scott</a>
+        <a href="#pogba">Paul Labile Pogba</a>
     </nav>
     <!-- Build your content here -->
     <div id="content">
-        <p id="top"><span id="liked-item"><br><br><br>ISS LIT</span> </p>
+        <p id="top" class="active"><span id="liked-item"><br><br><br>ISS LIT</span> </p>
         <!-- Example 1: Add a paragraph. Then within it, add a span with an id of "liked-item". Put something you like within the span. -->
         <!-- Challenge 1: Add a button with an id of "cool-button" -->
         <button id="cool-button">cool-button</button>
@@ -32,8 +32,8 @@
         <button id="minus">-</button>
         
         <!-- Challenge 4: Add 2 buttons, one with Play and another with Pause. Assign them ids of "play" and "pause", respectively. -->
-        <button id="play">play</button>
-        <button id="pause">pause</button>
+        <button id="play">play my song</button>
+        <button id="pause">pause my song</button>
         <!-- Challenge 5: Add an unordered list <ul> with an id of "fly-list" -->
         <ul id="fly-list">
             GOATs:
@@ -45,11 +45,11 @@
             But I keep it thuggin' like it's Makaveli<br>
             Ring, ring, hit my celly (Ring, ring)<br>
             Remember you went bad on me, I won't forget it (Ring, ring)<br>
-            You said you wanna tell on me, now, won't you tell it? (Yeah)<br>
+            You said you wanna tell on me, now, won't you tell it? (Yeah) <br>
             In between the sheets, you know I got you yellin' (Yellin')</a>
             <a  href="https://youtu.be/5i6A1IHAQsg?t=98"target="_blank"><img class="dontoliver" src="https://www.warnermusic.de/sites/warnermusic.de/files/artists/photos/don_toliver_pic.jpg"></a>
           </div>
-            <a class="travis"><br><br><br><br><br><br><br><br><br><h1 id="travis">Travis Scott</h1><h2><a href="#top"> Back to top</a></h2><br>
+            <a class="travis" id="laflame"><br><br><br><br><br><br><br><br><br><h1>Travis Scott</h1><h2><a href="#top"> Back to top</a></h2><br>
             <p>Now that I'm home, back off the road<br>
             We shut it down, where it ain't so<br>
             With checks in the streets, Jay number fours<br>
@@ -59,9 +59,10 @@
             Jet got a bed, it's bigger windows<br>
             Said I'll be there in 10, but I got there in four</p></a>
             <a  href="https://youtu.be/PJWHAiDARMQ?t=114"target="_blank"><img class="laflame" src="https://static.wikia.nocookie.net/keepingupwiththekardashians/images/4/4a/TravisScott.jpeg/revision/latest/scale-to-width-down/340?cb=20180205142135">
-            <a class="pioche"></a>
+            <a class="pioche"><br><br><br><br><br><br><br><br><br><h1 id="pogba">Paul Labile Pogba</h1><h2><a href="#top"> Back to top</a></h2><br></a>
+            <img class="gifpogba" src="https://media2.giphy.com/media/3o6ZsUpr0JaTQ3c3wA/source.gif" height="400"><img class="picpogba" src="https://image.winudf.com/v2/image1/Y29tLmF3ZXNvbWV3YWxscGFwZXJzLlBhdWxQb2diYV9zY3JlZW5fNF8xNTUwMTk2NDM4XzA5Nw/screen-4.jpg?fakeurl=1&type=.jpg" height="600">
         <!-- Challenge 6: Add a paragraph with a span. Inside that span (which has an id of "bold-text"), write something that you think should be emphasized :D -->
-        <p><span id="bold-text">Don Toliver is underrated.</span></p>
+        <p><span id="bold-text">Don Toliver is underrated</span></p>
         <!-- Challenge 7: Create a canvas element with an id named "smiley". It should have a width of 150 and a height of 150 -->
         <canvas id="smiley" width="150" height="150"></canvas>
     </div>
@@ -73,7 +74,7 @@
      var text = ["ISS LIT", "STRAIGHT UP", "ALRIGHT"];
      var counter = 0;
      var elem = document.getElementById("bold-text");
-     var inst = setInterval(change, 3000);
+     var inst = setInterval(change, 1000);
      function change() {
     elem.innerHTML = text[counter];
     counter++;
@@ -147,7 +148,7 @@ $('a[href*="#"]')
         $("#grow-text").css("font-size",size + "px");
     });
         $("#normal").on("click",function(){
-        size=14;
+        size=30;
         $("#grow-text").css("font-size",size + "px");
     });
         $("#minus").on("click",function(){
@@ -157,7 +158,7 @@ $('a[href*="#"]')
         $("#grow-text").css("font-size",size+ "px");
         }else{
             alert("VALUE IS MINUS SO RESET TO 14px");
-            size=14
+            size=30
             $("#grow-text").css("font-size",size+ "px");
         }
     });
@@ -205,75 +206,6 @@ $('a[href*="#"]')
     <!-- Hint: You might want to use the arc methods. Also the moveTo methods to move your imaginary pen to different coordinates -->
     <!-- Hint: Start with a circle. You might want to use Math.PI. -->
     <script>
-        function draw() {
-            var canvas = document.getElementById('smiley');
-            if (canvas.getContext) {
-                var ctx = canvas.getContext('2d');
-
-                ctx.beginPath();
-                ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
-                ctx.moveTo(110, 75);
-                ctx.arc(75, 75, 35, 0, Math.PI, false);  // Mouth (clockwise)
-                ctx.moveTo(65, 65);
-                ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Left eye
-                ctx.moveTo(95, 65);
-                ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
-                ctx.stroke();
-            }
-            draw();
-        }
-function draw() {
-            var canvas = document.getElementById('smiley');
-            if (canvas.getContext) {
-                var ctx = canvas.getContext('2d');
-
-                ctx.beginPath();
-                ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
-                ctx.moveTo(110, 75);
-                ctx.arc(75, 75, 35, 0, Math.PI, false);  // Mouth (clockwise)
-                ctx.moveTo(65, 65);
-                ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Left eye
-                ctx.moveTo(95, 65);
-                ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
-                ctx.stroke();
-            }
-            draw();
-        }
-function draw() {
-            var canvas = document.getElementById('smiley');
-            if (canvas.getContext) {
-                var ctx = canvas.getContext('2d');
-
-                ctx.beginPath();
-                ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
-                ctx.moveTo(110, 75);
-                ctx.arc(75, 75, 35, 0, Math.PI, false);  // Mouth (clockwise)
-                ctx.moveTo(65, 65);
-                ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Left eye
-                ctx.moveTo(95, 65);
-                ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
-                ctx.stroke();
-            }
-            draw();
-        }
-function draw() {
-            var canvas = document.getElementById('smiley');
-            if (canvas.getContext) {
-                var ctx = canvas.getContext('2d');
-
-                ctx.beginPath();
-                ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
-                ctx.moveTo(110, 75);
-                ctx.arc(75, 75, 35, 0, Math.PI, false);  // Mouth (clockwise)
-                ctx.moveTo(65, 65);
-                ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Left eye
-                ctx.moveTo(95, 65);
-                ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
-                ctx.stroke();
-            }
-            
-        }
-        draw();
 function draw() {
             var canvas = document.getElementById('smiley');
             if (canvas.getContext) {
