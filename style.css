@@ -73,7 +73,7 @@ html {
 }
 
 .laflame {
-  margin-top: -440px;
+  margin-top: -490px;
   position: absolute;
   margin-left: 1200px;
 }
@@ -86,10 +86,21 @@ a {
   color: #000;
 }
 
+button {
+  background-color: chartreuse
+}
+
+button:hover {
+  background-color: rgb(134, 134, 224)
+}
+
 .picpogba {
-  margin-top: -140px;
+  margin-top: -300px;
   position: absolute;
   margin-left: 800px;
 }
 
+img.dontoliver:hover, .laflame:hover, .picpogba:hover {
+  transform: scale(1.5) perspective(1px);
+}
 /* Add some styling for your content here */
